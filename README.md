@@ -1,6 +1,7 @@
 # 📝 Blog Web Application
 
 Blog Homepage https://imgur.com/efWP2Of
+
 Blog All Screenshots https://imgur.com/a/4T4oMCr
 
 A full-featured blog platform built with Node.js and Express.js supporting CRUD operations with EJS templating.
