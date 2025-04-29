@@ -1,0 +1,67 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="main-blog"> 
+    <% if (locals.main) { %>
+    <div class="info">
+       
+        <div class="date-div">
+            <img class="calendar" width="30" height="30" src="https://img.icons8.com/color/30/calendar--v1.png" alt="calendar--v1"/>
+            <p class="date"><%= main.date %></p>
+        </div>
+        <div>
+            <h1><%= main.header %></h1>
+        </div>
+        <div>
+           <p>
+            <%= main.content %>
+           </p>
+        </div>
+        <div>
+           <a href="/post/<%= main.id %>"> <button>Read More</button></a>
+        </div>
+    </div>
+    <div class="image-div">
+        <img src="<%= main.src %>" alt="blog-related-image">
+ </div>
+ <% } else { %>
+        <h1>There is no post to show :( Make a new post to show!</h1>
+    <% } %>
+
+</div>
+
+<div class="latest-blogs">
+    <div>
+        <h2>Recent Posts</h2>
+    </div>
+    <div class="cards">
+        <% if (locals.posts) { %>
+            <% posts.forEach(post => { %>
+    <div class="blog-card">
+        <div class="date-div">
+            <img class="calendar" width="30" height="30" src="https://img.icons8.com/color/30/calendar--v1.png" alt="calendar--v1"/>
+            <p class="date"><%= post.date %></p>
+        </div>
+        <div>
+            <a href="/post/<%= post.id %>">
+            <img class="related-img" src="<%= post.src %>" alt="blog-related-image">
+        </div>
+        <div>
+            <h4><%= post.header %></h4>
+        </div>
+        </a>
+    </div>
+    <% }); %>
+ </div>
+    <% } else { %>
+        <div class="header-one">
+        <h1>There is no post to show :( Make a new post to show!</h1>
+    </div>
+    <% } %>
+    
+   
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>

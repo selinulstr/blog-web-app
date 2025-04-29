@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="main-2">
+    <form action="/submit" method="post">
+        <div>
+        <label for="date">Date</label><br>
+        <input type="text" name="date" id="date" placeholder="01.01.2024" required>
+    </div>
+    <div>
+        <label for="header">Post Header</label><br>
+        <input type="text" name="header" id="header" placeholder="Post's Header" required>
+    </div>
+    <div>
+        <label for="src">Image Url</label><br>
+        <input type="url" name="src" id="src" placeholder="https://example.com" pattern="https://.*" size="30" required />
+    </div>
+    <div>
+        <label for="content">Content</label><br>
+        <textarea name="content" id="content" rows="20" cols="80" placeholder="Post's Content"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Post!">
+    </div>
+    </form>
+
+</div>
+
+
+
+
+<%- include("partials/footer.ejs") %>
